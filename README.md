@@ -1,8 +1,8 @@
-<<div align="center">
+<div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,30:6E40C9,60:1F6FEB,100:0D1117&height=220&section=header&text=Aman%20Karki&fontSize=58&fontColor=F0F6FC&animation=fadeIn&fontAlignY=36&desc=Software%20Engineer%20%7C%20Systems%2C%20AI%20Infrastructure%2C%20LLM%20Inference%20%7C%20C%2B%2B%2C%20CUDA%2C%20Python&descAlignY=54&descSize=16&descColor=C9D1D9" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1200&color=A371F7&vCenter=true&width=760&height=40&background=00000000&lines=Building%20LLM%20inference%20engines%20from%20scratch%20in%20C%2B%2B%20and%20CUDA;CUDA%20kernel%20merged%20into%20llama.cpp%20by%20the%20lead%20maintainer;Every%20number%20in%20these%20repos%20is%20measured%2C%20not%20estimated;Vector%20search%20and%20LLM%20inference%2C%20both%20engineered%20from%20scratch;Custom%20CUDA%20kernels%20hitting%20723%20GFLOP%2Fs%2C%20a%20343x%20speedup%20over%20CPU;Backend%20systems%20in%20C%2B%2B%20and%20Python%2C%20grounded%20in%20real%20DSA%20fundamentals;Dependency%20graphs%20and%20data%20pipelines%2C%20scoped%20across%20913%20real%20edges;Open%20to%20Software%20Engineering%2C%20AI%20Infra%2C%20HPC%2C%20and%20Data%20roles" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1200&color=A371F7&vCenter=true&width=760&height=40&background=00000000&lines=Building%20LLM%20inference%20engines%20from%20scratch%20in%20C%2B%2B%20and%20CUDA;Two%20CUDA%20contributions%20merged%20into%20llama.cpp%20master;Every%20number%20in%20these%20repos%20is%20measured%2C%20not%20estimated;Vector%20search%20and%20LLM%20inference%2C%20both%20engineered%20from%20scratch;Custom%20CUDA%20kernels%20hitting%20723%20GFLOP%2Fs%2C%20a%20343x%20speedup%20over%20CPU;Backend%20systems%20in%20C%2B%2B%20and%20Python%2C%20grounded%20in%20real%20DSA%20fundamentals;Dependency%20graphs%20and%20data%20pipelines%2C%20scoped%20across%20913%20real%20edges;Open%20to%20Software%20Engineering%2C%20AI%20Infra%2C%20HPC%2C%20and%20Data%20roles" />
 
 <img src="https://komarev.com/ghpvc/?username=amankarki151&color=3FB950&style=flat-square&label=Profile+Views" />
 
@@ -36,7 +36,7 @@ principle: Every number in these repos is measured, not estimated.
 
 ### 🏆 Key Achievements
 
-- 🔧 **CUDA kernel merged into llama.cpp's master branch** (30,000+ ★ open-source LLM inference engine), by the project's lead maintainer, verified across 216 automated test cases
+- 🔧 **Two CUDA contributions merged into llama.cpp's master branch** (120,000+ ★ open-source LLM inference engine) — a 1D pooling kernel merged by the project's creator, and i16/i32 tensor support for the CUDA DUP operator, verified against the full 16,097-test backend suite
 - 📦 **Published `pylattice-db` to PyPI** — an embedded vector database built entirely from scratch, installable via `pip`
 - 🧩 **Published a VS Code extension** for RAAG, surfacing live architectural metrics inline in the editor
 - ✅ **Verified an LLM's full forward pass against HuggingFace** to a 3e-5 max logit deviation — numerical agreement, not just plausible output
@@ -59,13 +59,17 @@ principle: Every number in these repos is measured, not estimated.
 
 ---
 
-### 🔧 Open Source Contribution
+### 🔧 Open Source Contributions
 
-**[llama.cpp](https://github.com/ggml-org/llama.cpp)** — open-source LLM inference engine (30,000+ ★)
+**[llama.cpp](https://github.com/ggml-org/llama.cpp)** — open-source LLM inference engine (120,000+ ★) · **2 merged pull requests**
 
-Implemented and contributed a CUDA kernel for one-dimensional pooling (average and max modes), closing a gap in GPU backend coverage. Verified across 216 automated test cases spanning every kernel size, stride, and padding combination, on two Nvidia T4 GPUs. **Merged into master by the project's lead maintainer** following code review.
+**CUDA kernel for 1D pooling** — Implemented average and max modes, closing a gap in GPU backend operator coverage. Verified across 216 automated test cases spanning every kernel size, stride, and padding combination, on two Nvidia T4 GPUs. **Merged into master by the project's creator** following code review.
 
 → [PR #27573](https://github.com/ggml-org/llama.cpp/pull/27573)
+
+**i16 and i32 support for the CUDA DUP operator** — Both types were silently falling back to CPU. The i32 copy path already existed but was blocked by the backend capability gate; i16 had no path at all. Fixed the gate and added the missing i16 branch. Verified on two Nvidia T4 GPUs against the full backend suite — 16,097 tests, zero regressions. **Approved by the project's creator and merged the same day.**
+
+→ [PR #28897](https://github.com/ggml-org/llama.cpp/pull/28897)
 
 ---
 
