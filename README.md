@@ -1,165 +1,145 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,30:6E40C9,60:1F6FEB,100:0D1117&height=220&section=header&text=Aman%20Karki&fontSize=58&fontColor=F0F6FC&animation=fadeIn&fontAlignY=36&desc=Software%20Engineer%20%7C%20Systems%2C%20AI%20Infrastructure%2C%20LLM%20Inference%20%7C%20C%2B%2B%2C%20CUDA%2C%20Python&descAlignY=54&descSize=16&descColor=C9D1D9" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,100:161B22&height=150&section=header&text=Aman%20Karki&fontSize=52&fontColor=F0F6FC&fontAlignY=42&desc=C%2B%2B%2FCUDA%20Engineer%20%C2%B7%20LLM%20Inference%20%26%20GPU%20Performance&descSize=17&descAlignY=72&descColor=8B949E" width="100%" alt="Aman Karki: C++/CUDA Engineer, LLM Inference & GPU Performance"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1200&color=A371F7&vCenter=true&width=760&height=40&background=00000000&lines=Building%20LLM%20inference%20engines%20from%20scratch%20in%20C%2B%2B%20and%20CUDA;Two%20CUDA%20contributions%20merged%20into%20llama.cpp%20master;Every%20number%20in%20these%20repos%20is%20measured%2C%20not%20estimated;Vector%20search%20and%20LLM%20inference%2C%20both%20engineered%20from%20scratch;Custom%20CUDA%20kernels%20hitting%20723%20GFLOP%2Fs%2C%20a%20343x%20speedup%20over%20CPU;Backend%20systems%20in%20C%2B%2B%20and%20Python%2C%20grounded%20in%20real%20DSA%20fundamentals;Dependency%20graphs%20and%20data%20pipelines%2C%20scoped%20across%20913%20real%20edges;Open%20to%20Software%20Engineering%2C%20AI%20Infra%2C%20HPC%2C%20and%20Data%20roles" />
-
-<img src="https://komarev.com/ghpvc/?username=amankarki151&color=3FB950&style=flat-square&label=Profile+Views" />
-
-</div>
-<br>
-
-```yaml
-role: Software Engineer — Systems, AI Infrastructure & LLM Inference
-stack: [C++20, CUDA, Python]
-focus: >-
-  Inference engines, vector databases, and dependency-graph systems,
-  built from scratch and verified against real references, not assumed.
-principle: Every number in these repos is measured, not estimated.
-```
-
-<br>
-
-<div align="center">
-
-![C++20](https://img.shields.io/badge/C%2B%2B20-0D1117?style=for-the-badge&logo=cplusplus&logoColor=00599C)
-![CUDA](https://img.shields.io/badge/CUDA-0D1117?style=for-the-badge&logo=nvidia&logoColor=76B900)
-![Python](https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=3776AB)
-![CMake](https://img.shields.io/badge/CMake-0D1117?style=for-the-badge&logo=cmake&logoColor=064F8C)
-![Docker](https://img.shields.io/badge/Docker-0D1117?style=for-the-badge&logo=docker&logoColor=2496ED)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-0D1117?style=for-the-badge&logo=githubactions&logoColor=2088FF)
-![PyPI](https://img.shields.io/badge/PyPI-0D1117?style=for-the-badge&logo=pypi&logoColor=3775A9)
+<a href="https://aman-portfolio-rho-six.vercel.app"><img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
+<a href="https://www.linkedin.com/in/aman-karki-131761197"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="https://aman-portfolio-rho-six.vercel.app/resume.pdf"><img src="https://img.shields.io/badge/Resume-PDF-2EA043?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Resume"/></a>
+<a href="mailto:itsamankarki@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+<a href="https://amankarki.hashnode.dev"><img src="https://img.shields.io/badge/Blog-2962FF?style=for-the-badge&logo=hashnode&logoColor=white" alt="Blog"/></a>
 
 </div>
 
----
+<br>
 
-### 🏆 Key Achievements
+I write C++ and CUDA, mostly for LLM inference. I build systems from the ground up, check them against a trusted reference, and publish the numbers, including the ones that don't flatter me.
 
-- 🔧 **Two CUDA contributions merged into llama.cpp's master branch** (120,000+ ★ open-source LLM inference engine) — a 1D pooling kernel merged by the project's creator, and i16/i32 tensor support for the CUDA DUP operator, verified against the full 16,097-test backend suite
-- 📦 **Published `pylattice-db` to PyPI** — an embedded vector database built entirely from scratch, installable via `pip`
-- 🧩 **Published a VS Code extension** for RAAG, surfacing live architectural metrics inline in the editor
-- ✅ **Verified an LLM's full forward pass against HuggingFace** to a 3e-5 max logit deviation — numerical agreement, not just plausible output
-- ⚡ **343x CUDA speedup** on custom kernels, **3.69x parallel speedup** on a C++ parsing engine — both independently benchmarked, not estimated
-- 🛡️ **Built CI gates that block real violations** — RAAG's instability gate and Lattice's benchmark-regression gate both fail a build automatically, not just lint it
-
----
-
-### 🛠️ Skills
-
-**Languages:** C++20 · Python · CUDA · SQL
-
-**Data Structures & Algorithms:** Graphs (BFS/DFS, Topological Sort, Cycle Detection) · Dynamic Programming · Hashing · Heaps · Two Pointers · Bit Manipulation
-
-**Low-Level Design & Systems:** OOP · SOLID Principles · Design Patterns · Multithreading (`std::jthread`, `std::atomic`) · RAII & Smart Pointers · Cache-Aware Design
-
-**AI, LLM & Agentic Systems:** LLM Inference · Retrieval-Augmented Generation (RAG) · GraphRAG · Agentic AI Workflows · Vector Databases · HNSW · INT8 Quantization · `pybind11`
-
-**Tools & DevOps:** CMake · Git · GitHub Actions (CI/CD) · Docker · FastAPI · PyPI Packaging · Linux
-
----
-
-### 🔧 Open Source Contributions
-
-**[llama.cpp](https://github.com/ggml-org/llama.cpp)** — open-source LLM inference engine (120,000+ ★) · **2 merged pull requests**
-
-**CUDA kernel for 1D pooling** — Implemented average and max modes, closing a gap in GPU backend operator coverage. Verified across 216 automated test cases spanning every kernel size, stride, and padding combination, on two Nvidia T4 GPUs. **Merged into master by the project's creator** following code review.
-
-→ [PR #27573](https://github.com/ggml-org/llama.cpp/pull/27573)
-
-**i16 and i32 support for the CUDA DUP operator** — Both types were silently falling back to CPU. The i32 copy path already existed but was blocked by the backend capability gate; i16 had no path at all. Fixed the gate and added the missing i16 branch. Verified on two Nvidia T4 GPUs against the full backend suite — 16,097 tests, zero regressions. **Approved by the project's creator and merged the same day.**
-
-→ [PR #28897](https://github.com/ggml-org/llama.cpp/pull/28897)
-
----
-
-### 🚀 Featured Projects
-
-Three systems, built from scratch, each independently verified rather than assumed to work.
+**Open to C++/CUDA roles in LLM inference and GPU performance. Remote, or in India (GMT+5:30).**
 
 <br>
 
-#### [verbum.cpp](https://github.com/amankarki151/verbum.cpp) — LLM Inference Engine
-
-<img src="assets/verbum-demo.png" width="640"/>
-
-An LLM inference engine written from scratch in C++ and CUDA — no PyTorch, no llama.cpp doing the math.
-
-- Engineered the full pipeline from scratch: tokenizer, attention, KV-cache, sampling — no dependency on PyTorch or an existing inference runtime
-- Validated the entire forward pass against real HuggingFace output to a **3e-5 max logit deviation** — a process that caught two real, non-crashing bugs (a RoPE convention mismatch, a grouped-query attention mapping error) before they could ship
-- Designed custom CUDA kernels (tiled matmul, RMSNorm, RoPE, grouped-query attention) achieving **723 GFLOP/s, a 343x speedup** over the CPU baseline, with output verified exactly against the CPU path
-- Built an INT8 post-training quantization pipeline cutting quantized-layer memory **4x** with exact-match correctness
-- Integrated with Lattice via `pybind11` to build a memory-augmented offline demo — an NPC that genuinely remembers what you told it, correctly managing the GIL to keep the app responsive
-
-`C++20` `CUDA` `Python` `pybind11`
-
-📺 [Demo](https://youtu.be/aP7grDJjJMA) · 📦 [Repo](https://github.com/amankarki151/verbum.cpp) · ✍️ [Writeup](https://amankarki.hashnode.dev/what-actually-happens-inside-a-transformer-forward-pass)
-
-<br>
-
-#### [Lattice](https://github.com/amankarki151/lattice) — Embedded Vector Database
-
-An embedded vector database built from scratch in C++ — closer to SQLite than to a service like Qdrant.
-
-- Hand-implemented a **HNSW (Hierarchical Navigable Small World)** index from the paper, not a library call
-- Built a write-ahead-logged, disk-backed storage engine with crash recovery, and a concurrent query path validated under ThreadSanitizer
-- Benchmarked at **583µs p50 latency, 95.4% recall** on the SIFT dataset — roughly **3.5x faster** than Qdrant's in-memory mode on the same workload
-- Reported the honest tradeoff alongside the win: build time is slower — said so directly rather than only publishing the flattering number
-- Implemented scalar quantization (float32→uint8), reducing per-vector storage 4x with the accuracy tradeoff directly measured
-- **Published to PyPI as `pylattice-db`** via `pybind11` bindings, backed by 30 automated GoogleTest cases and a CI pipeline that fails builds on benchmark regressions
-
-`C++20` `Python` `HNSW` `pybind11` `FastAPI` `CMake`
-
-📦 [PyPI](https://pypi.org/project/pylattice-db/) · 📦 [Repo](https://github.com/amankarki151/lattice) · ✍️ [Writeup](https://amankarki.hashnode.dev/building-an-hnsw-index-from-scratch)
-
-<br>
-
-#### [RAAG](https://github.com/amankarki151/RAAG) — AI-Powered Architectural Analytics Platform
-
-<img src="assets/raag-ci-gate.png" width="640"/>
-
-Parses a codebase, builds a real dependency graph, and scopes AI-assisted refactoring to exactly the blast radius a change can reach.
-
-- Engineered a parallel C++20 source-parsing engine using a `std::jthread` pool with cooperative cancellation via `std::stop_token` — a **3.69x speedup** (1,290 vs. 349 files/sec) across 579 real-world files with zero parse failures
-- Designed a dependency-graph analytics engine computing coupling, instability, and LCOM (Lack of Cohesion of Methods) metrics — surfacing real threshold violations and circular dependencies across 913 dependency edges
-- Built a GraphRAG pipeline scoping AI refactoring suggestions to a computed blast radius via metadata-filtered vector search in Qdrant, not unbounded similarity search
-- Implemented a self-hosted **CI/CD gate in GitHub Actions** that automatically blocks a pull request when a core module's instability score exceeds threshold — shown above, a real PR it actually blocked
-- Achieved **86% test coverage across 307 tests**
-- **Published as a VS Code extension**, surfacing live coupling and instability metrics inline in the editor — wrapping the existing CLI rather than duplicating logic, to guarantee output parity
-
-`C++20` `Python` `GraphRAG` `Docker` `GitHub Actions`
-
-📺 [Demo](https://youtu.be/kbh707DNPeU) · 📦 [Repo](https://github.com/amankarki151/RAAG) · 🧩 [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=amankarki151.raag-vscode) · ✍️ [Writeup](https://amankarki.hashnode.dev/parallel-cpp-source-parser-jthread-stop-token)
-
-<br>
-
-> Lattice and verbum.cpp already talk to each other for real — an NPC's memory, stored and retrieved by Lattice, generated by verbum.cpp. RAAG still calls Qdrant and Claude's API. Closing that gap is next — the full story: [**Two From-Scratch Systems, and the Day They Talked**](https://amankarki.hashnode.dev/two-from-scratch-systems-and-the-day-they-talked)
+<table>
+<tr>
+<td align="center" width="25%"><h3>2</h3>CUDA PRs merged into<br><b>llama.cpp</b> (100K+ ★)</td>
+<td align="center" width="25%"><h3>28 tok/s</h3>decode on a T4 from<br>my own CUDA kernels</td>
+<td align="center" width="25%"><h3>3e-5</h3>max logit error<br>vs HuggingFace</td>
+<td align="center" width="25%"><h3>583 µs</h3>p50 at 95.4% recall,<br>my own HNSW index</td>
+</tr>
+</table>
 
 ---
 
-### ✍️ Writing
+## Open source
 
-**RAAG**
-- [Building a Parallel C++ Source Parser: jthread, stop_token, and the Deadlock I Didn't See Coming](https://amankarki.hashnode.dev/parallel-cpp-source-parser-jthread-stop-token)
-- [I Ran a Coupling Analyzer on nlohmann/json and fmt. It Found a Class Doing 55 Jobs](https://amankarki.hashnode.dev/cpp-coupling-metrics-nlohmann-json-fmt)
-- [I Built an AI Refactoring Tool That Can't See More Code Than the Dependency Graph Allows](https://amankarki.hashnode.dev/graphrag-code-refactoring-blast-radius)
+**[llama.cpp](https://github.com/ggml-org/llama.cpp)** (ggml-org), CUDA backend. Contributing since Aug 2026, ongoing.
+
+| PR | What it does | How it was verified | Status |
+|---|---|---|---|
+| [#27573](https://github.com/ggml-org/llama.cpp/pull/27573) | New CUDA kernel for `POOL_1D` (average and max), closing a gap in GPU operator coverage | Every kernel size, stride and padding combination: 216 cases on two T4s | Merged by Georgi Gerganov |
+| [#28897](https://github.com/ggml-org/llama.cpp/pull/28897) | i16/i32 for `GGML_OP_DUP` on CUDA. Both were silently falling back to the CPU: fixed the capability check and added the missing i16 path | Full backend suite: 16,097/16,097 passing, zero regressions | Approved by Georgi Gerganov, merged by am17an |
+
+---
+
+## Projects
+
+### [verbum.cpp](https://github.com/amankarki151/verbum.cpp): LLM inference engine, from scratch
+
+Runs Qwen3-0.6B end to end in C++20 and CUDA, with no PyTorch and no existing runtime. The safetensors loader, BPE tokenizer, grouped-query attention, RoPE, SwiGLU, KV cache and sampling are all hand-written.
+
+<img src="assets/verbum-demo.png" width="680" alt="verbum.cpp demo"/>
+
+| Result | Detail |
+|---|---|
+| **Correctness** | Logits match HuggingFace to 3e-5. Diffing against that reference caught 5 silent bugs (RoPE convention, GQA mapping, KV-cache offsets) that gave wrong output without crashing |
+| **Speed** | CUDA kernels (tiled matmul, RMSNorm, RoPE, SwiGLU, attention decode) decode at **28 tok/s on a T4**, **38x** over CPU on the same machine, ~25% of the memory-bandwidth roofline |
+| **Memory** | Per-row INT8: **3.99x** smaller weight matrices, all 196 tensors under 1.3% error, identical greedy output. Also found a duplicate `lm_head` wasting 622 MB |
+
+`C++20` `CUDA` `Python` `pybind11` · [Demo](https://youtu.be/aP7grDJjJMA) · [Writeup](https://amankarki.hashnode.dev/what-actually-happens-inside-a-transformer-forward-pass)
+
+### [Lattice](https://github.com/amankarki151/lattice): embedded vector database
+
+A vector database you link against, closer to SQLite than to a service. HNSW index, WAL storage engine, crash recovery and quantization, all written from scratch in C++20.
+
+| Result | Detail |
+|---|---|
+| **Search** | **583 µs p50 at 95.4% recall** on SIFT10K, 1.3 ms p50 on SIFT1M. HNSW is **9.4x** faster than brute force at 50K vectors |
+| **Storage** | WAL with crash recovery, mmap segment files, atomic checkpoints. Concurrent path clean under ThreadSanitizer |
+| **Honesty** | [Benchmarked against Qdrant and Chroma](https://amankarki.hashnode.dev/vector-database-vs-qdrant-chroma-benchmark), with the losses published too (build time is the big one) |
+| **Shipping** | On [PyPI](https://pypi.org/project/pylattice-db/) as `pylattice-db`. 30 GoogleTest cases, CI that fails on benchmark regressions |
+
+`C++20` `Python` `HNSW` `pybind11` `FastAPI` · [Demo](https://youtu.be/yotdQkAqOkY) · [Writeup](https://amankarki.hashnode.dev/building-an-hnsw-index-from-scratch)
+
+### [RAAG](https://github.com/amankarki151/RAAG): architectural analytics platform
+
+Parses a codebase, builds its real dependency graph, and limits AI-assisted refactoring to the code a change can actually reach.
+
+<img src="assets/raag-ci-gate.png" width="680" alt="RAAG CI gate blocking a pull request"/>
+
+| Result | Detail |
+|---|---|
+| **Parsing** | Parallel C++20 Tree-sitter parser on a `std::jthread` pool with `std::stop_token` cancellation: **3.69x on 8 cores**, 1.1M AST nodes from 579 files, zero failures |
+| **Analysis** | Coupling, instability and cohesion across 913 dependency edges in nlohmann/json and fmt. [Found a class in fmt with an LCOM4 of 55](https://amankarki.hashnode.dev/cpp-coupling-metrics-nlohmann-json-fmt) |
+| **Guardrails** | GraphRAG scoped to a change's blast radius. A GitHub Actions gate blocks PRs that cross an instability threshold (above: a real one it blocked). 307 tests, 86% coverage |
+| **Shipping** | [VS Code extension](https://marketplace.visualstudio.com/items?itemName=amankarki151.raag-vscode) that wraps the same CLI, so the editor and CI always agree |
+
+`C++20` `Python` `GraphRAG` `Docker` `GitHub Actions` · [Demo](https://youtu.be/kbh707DNPeU) · [Writeup](https://amankarki.hashnode.dev/parallel-cpp-source-parser-jthread-stop-token)
+
+---
+
+## Skills
+
+| | |
+|---|---|
+| **Languages** | C++20 · CUDA · Python · SQL |
+| **GPU & performance** | CUDA kernels · shared-memory tiling · roofline analysis · INT8 quantization · benchmarking · multithreading (`std::jthread`, `std::atomic`) |
+| **LLM inference** | KV cache · grouped-query attention · RoPE · RMSNorm · SwiGLU · BPE tokenization · sampling · safetensors · llama.cpp/ggml · HuggingFace Transformers |
+| **Vector search & RAG** | HNSW · scalar quantization · write-ahead logging · mmap storage · Qdrant · Chroma · RAG · GraphRAG |
+| **Tools** | CMake · Linux · Git · Docker · GitHub Actions · pybind11 · GoogleTest · ThreadSanitizer · Tree-sitter · FastAPI · SQLite · PyPI |
+| **CS fundamentals** | Data structures & algorithms · OOP · SOLID · design patterns · low-level design |
+
+---
+
+## Writing
+
+Nine articles on [Hashnode](https://amankarki.hashnode.dev), also republished on Medium via Stackademic. Each one covers a real bug or a real measurement.
+
+<details>
+<summary><b>Show all articles</b></summary>
+<br>
+
+**verbum.cpp**
+- [What Actually Happens Inside a Transformer Forward Pass](https://amankarki.hashnode.dev/what-actually-happens-inside-a-transformer-forward-pass): five bugs that never crash and just give wrong answers
+- [INT8 Quantization the Second Time Around](https://amankarki.hashnode.dev/int8-quantization-the-second-time-around)
+- [Two From-Scratch Systems, and the Day They Talked](https://amankarki.hashnode.dev/two-from-scratch-systems-and-the-day-they-talked)
 
 **Lattice**
 - [Building an HNSW Index From Scratch](https://amankarki.hashnode.dev/building-an-hnsw-index-from-scratch)
 - [Benchmarking Against Qdrant and Chroma](https://amankarki.hashnode.dev/vector-database-vs-qdrant-chroma-benchmark)
 - [What I Learned Building a Storage Engine From Scratch (and What I'd Change)](https://amankarki.hashnode.dev/what-i-learned-building-a-storage-engine-from-scratch-and-what-i-d-change)
 
-**verbum.cpp**
-- [What Actually Happens Inside a Transformer Forward Pass](https://amankarki.hashnode.dev/what-actually-happens-inside-a-transformer-forward-pass)
-- [INT8 Quantization the Second Time Around](https://amankarki.hashnode.dev/int8-quantization-the-second-time-around)
-- [Two From-Scratch Systems, and the Day They Talked](https://amankarki.hashnode.dev/two-from-scratch-systems-and-the-day-they-talked)
+**RAAG**
+- [Building a Parallel C++ Source Parser: jthread, stop_token, and the Deadlock I Didn't See Coming](https://amankarki.hashnode.dev/parallel-cpp-source-parser-jthread-stop-token)
+- [I Ran a Coupling Analyzer on nlohmann/json and fmt. It Found a Class Doing 55 Jobs](https://amankarki.hashnode.dev/cpp-coupling-metrics-nlohmann-json-fmt)
+- [I Built an AI Refactoring Tool That Can't See More Code Than the Dependency Graph Allows](https://amankarki.hashnode.dev/graphrag-code-refactoring-blast-radius)
+
+</details>
+
+---
+
+## How I work
+
+- **Diff against a reference.** If there's a trusted implementation, I compare against it number for number before I believe my own output.
+- **Measure on the same machine.** A speedup across two different computers isn't a speedup.
+- **Publish the honest number.** If my system loses a benchmark, the loss goes in the README next to the win.
 
 ---
 
 <div align="center">
 
-### 📫 Find Me
+**Currently:** GPU performance work in open-source LLM inference engines.
 
-[LinkedIn](https://www.linkedin.com/in/aman-karki-131761197) · [Hashnode](https://amankarki.hashnode.dev) · [Portfolio](https://aman-portfolio-rho-six.vercel.app) · [Email](mailto:itsamankarki@gmail.com)
+Software Engineer (Independent) since Dec 2025 · B.Tech CSE, UPES (2024) · Before engineering, a year making [music](https://aman-portfolio-rho-six.vercel.app/music.html) full-time.
+
+<a href="mailto:itsamankarki@gmail.com">itsamankarki@gmail.com</a> · <a href="https://www.linkedin.com/in/aman-karki-131761197">LinkedIn</a> · <a href="https://aman-portfolio-rho-six.vercel.app">Portfolio</a>
 
 </div>
