@@ -1,7 +1,7 @@
 <div align="center">
 
 <h1>Aman Karki</h1>
-<p><b>Software Engineer · C++ / CUDA · LLM Inference · Systems</b></p>
+<p><b>C++/CUDA Engineer · LLM Inference &amp; GPU Performance</b></p>
 
 <a href="https://aman-portfolio-rho-six.vercel.app"><img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
 <a href="https://www.linkedin.com/in/aman-karki-131761197"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
@@ -35,16 +35,32 @@ I write **C++ and CUDA**, mostly for **LLM inference**. I build systems from the
 <td align="center" width="25%"><h3>2 merged PRs</h3>CUDA backend of<br><b>llama.cpp</b> (100K+ ★)</td>
 <td align="center" width="25%"><h3>28 tok/s</h3>decode on a T4 from<br><b>my own CUDA kernels</b></td>
 <td align="center" width="25%"><h3>3e-5</h3>max logit error<br><b>vs HuggingFace</b></td>
-<td align="center" width="25%"><h3>583 µs</h3>p50 at 95.4% recall,<br><b>my own HNSW index</b></td>
+<td align="center" width="25%"><h3>1.37–2.81x</h3>FP8 path over Marlin<br><b>on an L4 (vLLM, measured)</b></td>
 </tr>
 </table>
 
 > [!NOTE]
-> **Three systems built from scratch** (an LLM inference engine, a vector database and a code analyzer) and **two CUDA kernels merged into llama.cpp**, one merged by the project's creator, **Georgi Gerganov**.
+> **2 CUDA PRs merged into llama.cpp**, reviewed and merged by its maintainers including creator **Georgi Gerganov**, and now **working on block-FP8 GEMM support for Ada GPUs in vLLM**. Plus **three systems built from scratch**: an LLM inference engine, a vector database and a code analyzer.
 
 ---
 
 ## 🔧 Open source
+
+### vLLM: block-FP8 on Ada GPUs (working on)
+
+<a href="https://github.com/vllm-project/vllm"><img src="https://img.shields.io/badge/vllm--project-vLLM-181717?style=for-the-badge&logo=github&logoColor=white" alt="vLLM"/></a> <img src="https://img.shields.io/badge/status-working%20on-8250DF?style=for-the-badge" alt="working on"/>
+
+Block-quantized FP8 models (DeepSeek-style 128×128 scales) on Ada GPUs (L4, L40S, RTX 4090) fall back to Marlin, a weight-only kernel, so the FP8 tensor cores sit idle. I measured the cost first: on an L4, an FP8 tensor-core GEMM path ran **1.37–2.81x faster than Marlin at batch 256+** across 4 Qwen3-8B layer shapes, while Marlin stays ahead at decode sizes.
+
+| What | Status |
+|---|---|
+| [**#58241**](https://github.com/vllm-project/vllm/issues/58241): SM89 blockwise FP8 GEMM. CUTLASS's Ada blockwise kernel adapted to vLLM's per-token activation scales and wired into vLLM; compiles to Ada's FP8 tensor-core instructions (QMMA) | 🔨 GPU testing on an L4 in progress |
+| [**#59261**](https://github.com/vllm-project/vllm/pull/59261): fix for the broken block-FP8 GEMM benchmark | 🟣 Open |
+| Enable the block-FP8 kernel tests on SM89 | 🟣 Opening next |
+
+Write-up: [Blockwise FP8 on Ada GPUs: why your L4 falls back to Marlin, measured](https://medium.com/gitconnected/e74a0dfa3024) (Level Up Coding)
+
+### llama.cpp: CUDA backend
 
 <a href="https://github.com/ggml-org/llama.cpp"><img src="https://img.shields.io/badge/ggml--org-llama.cpp-181717?style=for-the-badge&logo=github&logoColor=white" alt="llama.cpp"/></a> <img src="https://img.shields.io/badge/CUDA%20backend-2%20PRs%20merged-2EA043?style=for-the-badge" alt="2 PRs merged"/> <img src="https://img.shields.io/badge/status-ongoing-8250DF?style=for-the-badge" alt="ongoing"/>
 
@@ -139,7 +155,7 @@ Parses a codebase, builds its **real dependency graph**, and limits AI-assisted 
 | | Result |
 |---|---|
 | **Parsing** | Parallel C++20 Tree-sitter parser on a `std::jthread` pool: **3.69x on 8 cores**, **1.1M AST nodes** from 579 files, **zero failures** |
-| **Analysis** | Coupling, instability and cohesion across **913 dependency edges** in nlohmann/json and fmt. [Found a class in fmt with an **LCOM4 of 55**](https://amankarki.hashnode.dev/cpp-coupling-metrics-nlohmann-json-fmt) |
+| **Analysis** | Coupling, instability and cohesion metrics across **913 dependency edges** in nlohmann/json and fmt |
 | **Guardrails** | GraphRAG scoped to a change's blast radius. **A GitHub Actions gate blocks risky PRs** (above: a real one it blocked). **307 tests, 86% coverage** |
 | **Shipping** | **[VS Code extension](https://marketplace.visualstudio.com/items?itemName=amankarki151.raag-vscode)** that wraps the same CLI, so the editor and CI always agree |
 
@@ -157,8 +173,8 @@ Parses a codebase, builds its **real dependency graph**, and limits AI-assisted 
 | | |
 |---|---|
 | **Languages** | C++20 · CUDA · Python · SQL |
-| **GPU & performance** | CUDA kernels · shared-memory tiling · roofline analysis · INT8 quantization · benchmarking · multithreading (`std::jthread`, `std::atomic`) |
-| **LLM inference** | KV cache · grouped-query attention · RoPE · RMSNorm · SwiGLU · BPE tokenization · sampling · safetensors · llama.cpp/ggml · HuggingFace Transformers |
+| **GPU & performance** | CUDA kernels · CUTLASS 2.x · tensor cores (FP8 MMA on Ada) · SASS inspection · shared-memory tiling · roofline analysis · FP8/INT8 quantization · benchmarking · multithreading (`std::jthread`, `std::atomic`) |
+| **LLM inference** | vLLM · KV cache · grouped-query attention · RoPE · RMSNorm · SwiGLU · BPE tokenization · sampling · safetensors · llama.cpp/ggml · HuggingFace Transformers |
 | **Vector search & RAG** | HNSW · scalar quantization · write-ahead logging · mmap storage · Qdrant · Chroma · RAG · GraphRAG |
 | **Backend & tools** | CMake · Linux · Git · Docker · GitHub Actions · pybind11 · GoogleTest · ThreadSanitizer · Tree-sitter · FastAPI · SQLite · PyPI |
 | **CS fundamentals** | Data structures & algorithms · OOP · SOLID · design patterns · low-level design |
@@ -167,10 +183,13 @@ Parses a codebase, builds its **real dependency graph**, and limits AI-assisted 
 
 ## ✍️ Writing
 
-**Nine articles** on [Hashnode](https://amankarki.hashnode.dev), also republished on Medium via Stackademic. Each one covers **a real bug or a real measurement**.
+**Eleven articles** on [Hashnode](https://amankarki.hashnode.dev), also on Medium; **two published in [Level Up Coding](https://levelup.gitconnected.com)**. Each one covers **a real bug or a real measurement**.
+
+- [**Two CUDA PRs into llama.cpp, and what they taught me about a 100K-star codebase**](https://medium.com/gitconnected/2abe07a2c1bb) · Level Up Coding
+- [**Blockwise FP8 on Ada GPUs: why your L4 falls back to Marlin, measured**](https://medium.com/gitconnected/e74a0dfa3024) · Level Up Coding
 
 <details>
-<summary><b>Show all articles</b></summary>
+<summary><b>Show the other nine</b></summary>
 <br>
 
 **verbum.cpp**
@@ -203,7 +222,7 @@ Parses a codebase, builds its **real dependency graph**, and limits AI-assisted 
 
 <div align="center">
 
-**Currently:** GPU performance work in open-source LLM inference engines.
+**Currently:** working on block-FP8 GEMM support for Ada GPUs in vLLM ([#58241](https://github.com/vllm-project/vllm/issues/58241)). Open to remote roles in LLM inference and GPU performance; available for interviews from December 2026.
 
 Software Engineer (Independent) since Dec 2025 · B.Tech CSE, UPES (2024) · Before engineering, a year making [music](https://aman-portfolio-rho-six.vercel.app/music.html) full-time.
 
