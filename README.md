@@ -54,7 +54,8 @@ Block-quantized FP8 models (DeepSeek-style 128×128 scales) on Ada GPUs (L4, L40
 
 | What | Status |
 |---|---|
-| [**#58241**](https://github.com/vllm-project/vllm/issues/58241): SM89 blockwise FP8 GEMM. CUTLASS's Ada blockwise kernel adapted to vLLM's per-token activation scales and wired into vLLM; compiles to Ada's FP8 tensor-core instructions (QMMA) | 🔨 GPU testing on an L4 in progress |
+| [**#58241**](https://github.com/vllm-project/vllm/issues/58241): SM89 blockwise FP8 GEMM. CUTLASS's Ada blockwise kernel adapted to vLLM's per-token activation scales and wired into vLLM; compiles to Ada's FP8 tensor-core instructions (QMMA) | ✅ correct on an L4 · 🔨 tuning speed (profiling found register spills; spill-free fix in testing) |
+| [**#60171**](https://github.com/vllm-project/vllm/pull/60171): run the block-FP8 kernel tests on Ada (SM89); 221 passed on an L4 | 🟣 Open |
 | [**#59261**](https://github.com/vllm-project/vllm/pull/59261): fix for the broken block-FP8 GEMM benchmark | 🟣 Open |
 | Enable the block-FP8 kernel tests on SM89 | 🟣 Opening next |
 
