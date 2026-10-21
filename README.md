@@ -55,11 +55,13 @@ Block-quantized FP8 models (DeepSeek-style 128×128 scales) on Ada GPUs (L4, L40
 | What | Status |
 |---|---|
 | [**#61224**](https://github.com/vllm-project/vllm/pull/61224): SM89 blockwise FP8 GEMM ([#58241](https://github.com/vllm-project/vllm/issues/58241)). CUTLASS's Ada blockwise kernel adapted to vLLM's per-token activation scales; spill-free mainloop, tiles by M. End to end on an L4 (Qwen3-8B-FP8): **~1.4x throughput** over Marlin, same accuracy; batch 1 still ~4% slower | 🟣 Open |
-| [**#62128**](https://github.com/vllm-project/vllm/pull/62128): int8 W8A8 small-M retune for SM89 (fixes [#56924](https://github.com/vllm-project/vllm/issues/56924)). 16-row tiles for small N at M 17–64: **~13% less GEMM time** over M 17–64 on an RTX 4090 (k/v_proj up to 1.84x), identical results, 400 int8 tests passing | 🟣 Open |
+| [**#62128**](https://github.com/vllm-project/vllm/pull/62128): int8 W8A8 small-M retune for SM89 (fixes [#56924](https://github.com/vllm-project/vllm/issues/56924)). 16-row tiles for small N at M 17–64: **~13% less GEMM time** over M 17–64 on an RTX 4090 (k/v_proj up to 1.84x), identical results, 400 int8 tests passing. A reviewer's run on a 60-SM RTX 4500 Ada showed down_proj getting slower, so I'm reworking the rule to count GPU waves before it switches tiles | 📝 Draft (reworking) |
 | [**#60171**](https://github.com/vllm-project/vllm/pull/60171): run the block-FP8 kernel tests on Ada (SM89); 221 passed on an L4 | 🟣 Open |
 | [**#59261**](https://github.com/vllm-project/vllm/pull/59261): fix for the broken block-FP8 GEMM benchmark; each provider now asserts it runs the kernel it names. Run on an L4 and an H100 (CUTLASS path included) | 🟣 Open |
 
-Write-ups: [Blockwise FP8 on Ada GPUs: why your L4 falls back to Marlin, measured](https://medium.com/gitconnected/e74a0dfa3024) (Level Up Coding) · [Part 2: my kernel was correct and 4x too slow](https://amankarki.hashnode.dev/blockwise-fp8-ada-kernel-4x-too-slow)
+Reviews: [#62026](https://github.com/vllm-project/vllm/pull/62026) (registering out-of-tree block-FP8 linear kernels): suggested a selection test for the new path; it was added, approved.
+
+Write-ups: [Blockwise FP8 on Ada GPUs: why your L4 falls back to Marlin, measured](https://medium.com/gitconnected/e74a0dfa3024) (Level Up Coding) · [Part 2: my kernel was correct and 4x too slow](https://medium.com/gitconnected/66c906ad65d5) (Level Up Coding)
 
 ### llama.cpp: CUDA backend
 
@@ -184,9 +186,9 @@ Parses a codebase, builds its **real dependency graph**, and limits AI-assisted 
 
 ## ✍️ Writing
 
-**Twelve articles** on [Hashnode](https://amankarki.hashnode.dev), also on Medium; **two published in [Level Up Coding](https://levelup.gitconnected.com)**. Each one covers **a real bug or a real measurement**.
+**Twelve articles** on [Hashnode](https://amankarki.hashnode.dev), also on Medium; **three published in [Level Up Coding](https://levelup.gitconnected.com)**. Each one covers **a real bug or a real measurement**.
 
-- [**Blockwise FP8 on Ada GPUs, part 2: my kernel was correct and 4x too slow**](https://amankarki.hashnode.dev/blockwise-fp8-ada-kernel-4x-too-slow) · register spills, the fix, and ~1.42x end to end on an L4
+- [**Blockwise FP8 on Ada GPUs, part 2: my kernel was correct and 4x too slow**](https://medium.com/gitconnected/66c906ad65d5) · Level Up Coding · register spills, the fix, and ~1.42x end to end on an L4
 - [**Two CUDA PRs into llama.cpp, and what they taught me about a 100K-star codebase**](https://medium.com/gitconnected/2abe07a2c1bb) · Level Up Coding
 - [**Blockwise FP8 on Ada GPUs: why your L4 falls back to Marlin, measured**](https://medium.com/gitconnected/e74a0dfa3024) · Level Up Coding
 
