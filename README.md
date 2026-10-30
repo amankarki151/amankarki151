@@ -61,7 +61,7 @@ Block-quantized FP8 models (DeepSeek-style 128×128 scales) on Ada GPUs (L4, L40
 
 Reviews: [#62026](https://github.com/vllm-project/vllm/pull/62026) (registering out-of-tree block-FP8 linear kernels): suggested a selection test for the new path; it was added, approved.
 
-Write-ups: [Blockwise FP8 on Ada GPUs: why your L4 falls back to Marlin, measured](https://medium.com/gitconnected/e74a0dfa3024) (Level Up Coding) · [Part 2: my kernel was correct and 4x too slow](https://medium.com/gitconnected/66c906ad65d5) (Level Up Coding)
+Write-ups: [Blockwise FP8 on Ada GPUs: why your L4 falls back to Marlin, measured](https://medium.com/gitconnected/e74a0dfa3024) (Level Up Coding) · [Part 2: my kernel was correct and 4x too slow](https://medium.com/gitconnected/66c906ad65d5) (Level Up Coding) · [My GPU fix was 13% faster on one card and 81% slower on another](https://amankarki.hashnode.dev/gpu-fix-faster-on-one-card-slower-on-another-waves) (Hashnode · [Level Up Coding](https://levelup.gitconnected.com/my-gpu-fix-was-13-faster-on-one-card-and-81-slower-on-another-61fa270c7e79); the #62128 waves story)
 
 ### llama.cpp: CUDA backend
 
@@ -186,8 +186,9 @@ Parses a codebase, builds its **real dependency graph**, and limits AI-assisted 
 
 ## ✍️ Writing
 
-**Twelve articles** on [Hashnode](https://amankarki.hashnode.dev), also on Medium; **three published in [Level Up Coding](https://levelup.gitconnected.com)**. Each one covers **a real bug or a real measurement**.
+**Thirteen articles** on [Hashnode](https://amankarki.hashnode.dev), also on Medium; **four published in [Level Up Coding](https://levelup.gitconnected.com)**. Each one covers **a real bug or a real measurement**.
 
+- [**My GPU fix was 13% faster on one card and 81% slower on another**](https://amankarki.hashnode.dev/gpu-fix-faster-on-one-card-slower-on-another-waves) · Hashnode · [Level Up Coding](https://levelup.gitconnected.com/my-gpu-fix-was-13-faster-on-one-card-and-81-slower-on-another-61fa270c7e79) · a reviewer's smaller Ada GPU, GPU waves, and the wave-count rule that fixed it on three Ada GPUs
 - [**Blockwise FP8 on Ada GPUs, part 2: my kernel was correct and 4x too slow**](https://medium.com/gitconnected/66c906ad65d5) · Level Up Coding · register spills, the fix, and ~1.42x end to end on an L4
 - [**Two CUDA PRs into llama.cpp, and what they taught me about a 100K-star codebase**](https://medium.com/gitconnected/2abe07a2c1bb) · Level Up Coding
 - [**Blockwise FP8 on Ada GPUs: why your L4 falls back to Marlin, measured**](https://medium.com/gitconnected/e74a0dfa3024) · Level Up Coding
