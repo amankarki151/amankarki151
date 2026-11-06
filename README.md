@@ -61,6 +61,8 @@ Block-quantized FP8 models (DeepSeek-style 128×128 scales) on Ada GPUs (L4, L40
 
 Reviews: [#62026](https://github.com/vllm-project/vllm/pull/62026) (registering out-of-tree block-FP8 linear kernels): suggested a selection test for the new path; it was added, approved.
 
+Raw numbers for all of this (GPU, commit, command, output): [ada-fp8-benchmarks](https://github.com/amankarki151/ada-fp8-benchmarks).
+
 Write-ups: [Blockwise FP8 on Ada GPUs: why your L4 falls back to Marlin, measured](https://medium.com/gitconnected/e74a0dfa3024) (Level Up Coding) · [Part 2: my kernel was correct and 4x too slow](https://medium.com/gitconnected/66c906ad65d5) (Level Up Coding) · [My GPU fix was 13% faster on one card and 81% slower on another](https://amankarki.hashnode.dev/gpu-fix-faster-on-one-card-slower-on-another-waves) (Hashnode · [Level Up Coding](https://levelup.gitconnected.com/my-gpu-fix-was-13-faster-on-one-card-and-81-slower-on-another-61fa270c7e79); the #62128 waves story)
 
 ### llama.cpp: CUDA backend
